@@ -112,7 +112,7 @@ def create_or_update_pool(batch_service_client, pool_id, num_tasks):
             vm_size=os.environ["_POOL_VM_SIZE"],
             enable_auto_scale=True,
             auto_scale_evaluation_interval=timedelta(days=0,hours=0,minutes=5),
-            auto_scale_formula='''// Sets the initial pool size to 4 nodes.
+            auto_scale_formula='''// Sets the initial pool size:
 initialPoolSize = {poolsize};
 $TargetLowPriorityNodes = initialPoolSize;
 // "Mon, 06 Oct 2014 10:20:00 GMT" represents the datetime that this autoscale formula starts to evaluate. This is an arbitrary value here.
